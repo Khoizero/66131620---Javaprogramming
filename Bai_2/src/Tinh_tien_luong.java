@@ -1,5 +1,5 @@
 public class Tinh_tien_luong {
-    public static void main(){
+    public static void main(String[] args){
 
         //Nhập số giờ làm và lương theo giờ
         double So_gio_lam = 60;
