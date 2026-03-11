@@ -14,28 +14,28 @@ public class B3_BT3 {
         String name = scanner.nextLine();
 
         System.out.print("Điểm Toán: ");
-        String math = scanner.nextLine();
+        double math = scanner.nextDouble();
 
         System.out.print("Điểm Lý: ");
-        String physics = scanner.nextLine();
+        double physics = scanner.nextDouble();
 
         System.out.print("Điểm Hóa: ");
-        String chemistry = scanner.nextLine();
+        double chemistry = scanner.nextDouble();
 
         double average = (math + physics + chemistry) / 3;
 
         //Ghi vào file
         try {
-            FileWriter writer = new FileWriter("student.txt", true);
-            writer.write("=== SINH VIÊN ===\n");
-            writer.write("Mã SV: " + id + "\n");
-            writer.write("Họ tên: " + name + "\n");
-            writer.write(String.format("Điểm Toán: PT.1f\n", math));
-            writer.write(String.format("Điểm Lý: PT.1f\n", physics));
-            writer.write(String.format("Điểm Hóa: PT.1f\n", chemistry));
-            writer.write(String.format("Điểm TB: PT.2f\n", average));
-            writer.write("=================\n\n");
-            writer.close();
+            FileWriter wr = new FileWriter("student.txt", true);
+            wr.write("=== SINH VIÊN ===\n");
+            wr.write("Mã SV: " + id + "\n");
+            wr.write("Họ tên: " + name + "\n");
+            wr.write(String.format("Điểm Toán: %.1f\n", math));
+            wr.write(String.format("Điểm Lý: %.1f\n", physics));
+            wr.write(String.format("Điểm Hóa: %.1f\n", chemistry));
+            wr.write(String.format("Điểm TB: %.2f\n", average));
+            wr.write("=================\n\n");
+            wr.close();
             System.out.println("\nĐã lưu thông tin vào file students.txt");
         } catch (IOException e) {
             System.out.println("Lỗi ghi file: " + e.getMessage());
