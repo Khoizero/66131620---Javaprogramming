@@ -26,7 +26,7 @@ public class B3_BT3 {
 
         //Ghi vào file
         try {
-            FileWriter wr = new FileWriter("student.txt", true);
+            FileWriter wr = new FileWriter("sinhvien.txt", true);
             wr.write("=== SINH VIÊN ===\n");
             wr.write("Mã SV: " + id + "\n");
             wr.write("Họ tên: " + name + "\n");
@@ -36,7 +36,7 @@ public class B3_BT3 {
             wr.write(String.format("Điểm TB: %.2f\n", average));
             wr.write("=================\n\n");
             wr.close();
-            System.out.println("\nĐã lưu thông tin vào file students.txt");
+            System.out.println("\nĐã lưu thông tin vào file sinhvien.txt");
         } catch (IOException e) {
             System.out.println("Lỗi ghi file: " + e.getMessage());
         }
