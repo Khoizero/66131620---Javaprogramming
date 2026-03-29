@@ -58,21 +58,59 @@ public class Run {
         }
 
         //Bo sung HS
-        System.out.println("====Nhap HS can bo sung");
-        System.out.print("Nhap ten HS: ");
-        String tenBS = scanner.nextLine();
-        System.out.print("Nhap tuoi HS: ");
-        int tuoiBS = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("Nhap lop HS: ");
-        String lopBS = scanner.nextLine();
+        System.out.println("====================");
+        System.out.println("1. Nhap HS bo sung");
+        System.out.println("2. Khong can nhap");
+        int chon = scanner.nextInt();
 
-        danhsach.add(new HocSinh(tenBS, tuoiBS, lopBS));
+        if(chon == 1) {
+            System.out.println("====Nhap HS can bo sung====");
+            System.out.print("Nhap ten HS: ");
+            String tenBS = scanner.nextLine();
+            System.out.print("Nhap tuoi HS: ");
+            int tuoiBS = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("Nhap lop HS: ");
+            String lopBS = scanner.nextLine();
 
-        System.out.println("Danh sach sau khi bo sung:");
-        for (HocSinh nhs : danhsach) {
-            System.out.println(nhs);
+            danhsach.add(new HocSinh(tenBS, tuoiBS, lopBS));
+
+            System.out.println("Danh sach sau khi bo sung:");
+            for (HocSinh nhs : danhsach) {
+                System.out.println(nhs);
+            }
+        }
+        else if (chon == 2) {
+            System.out.println("===Hoan tat===");
         }
 
+
+        //Xoa hs ten Hoa
+        System.out.println("====Xoa hoc sinh tên 'Hoa'====");
+        for (int i = 0; i < danhsach.size(); i++) {
+            // Lấy tên của học sinh tại vị trí i
+            String tenHienTai = danhsach.get(i).gettenHS();
+
+            if (tenHienTai.equalsIgnoreCase("Hoa")) {
+                System.out.println("--> Da tim thay va Xoa: " + tenHienTai);
+                danhsach.remove(i);
+
+                // Quan trọng: Sau khi xóa, danh sách bị dồn lên,
+                // ta cần giảm i để không bỏ sót phần tử tiếp theo
+                i--;
+            }
+        }
+
+// --- CÂU 5.b: Xuất lại danh sách ---
+        System.out.println("===Danh sach sau khi xu ly===");
+        if (danhsach.isEmpty()) {
+            System.out.println("---Danh sach trong---");
+        } else {
+            for (HocSinh nhs : danhsach) {
+                System.out.println(nhs); // Sẽ gọi hàm toString() bạn đã viết
+            }
+        }
+
+        scanner.close();
     }
 }
