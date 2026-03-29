@@ -57,6 +57,7 @@ public class Run {
             System.out.println(nhs);
         }
 
+        //Bo sung HS
         System.out.println("====Nhap HS can bo sung");
         System.out.print("Nhap ten HS: ");
         String tenBS = scanner.nextLine();
