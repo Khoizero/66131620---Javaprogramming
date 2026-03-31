@@ -1,65 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #1e1e1e;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.example.no_gacha_no_life.HelloController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
 
-<VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.no_gacha_no_life.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+    <Label text="GACHA SYSTEM" textFill="GOLD"><font><Font name="System Bold" size="24.0" /></font></Label>
 
-    <Label text="Hệ Thống Gacha Mô Phỏng" textFill="WHITE">
-        <font>
-            <Font name="System Bold" size="24.0" />
-        </font>
-    </Label>
-
-    <HBox alignment="CENTER" spacing="20.0">
-        <children>
-            <Label fx:id="pityLabel" text="Pity 5 sao: 0" textFill="#00ffcc">
-                <font>
-                    <Font name="System Bold" size="14.0" />
-                </font>
-            </Label>
-            <Label fx:id="guaranteeLabel" text="Bảo hiểm: Tắt" textFill="#ff5555">
-                <font>
-                    <Font name="System Bold" size="14.0" />
-                </font>
-            </Label>
-        </children>
+    <HBox alignment="CENTER" spacing="20">
+        <Label fx:id="pityLabel" text="Pity 5 sao: 0" textFill="CYAN" />
+        <Label fx:id="guaranteeLabel" text="Bảo hiểm: KHÔNG" textFill="ORANGE" />
     </HBox>
 
-    <VBox alignment="CENTER" minHeight="100.0" style="-fx-background-color: #3c3f41; -fx-background-radius: 10;">
-        <children>
-            <Label fx:id="resultLabel" text="Chúc bạn may mắn!" textFill="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </Label>
-        </children>
+    <VBox alignment="CENTER" prefHeight="300" prefWidth="400" style="-fx-background-color: #2b2b2b; -fx-background-radius: 15;">
+        <ImageView fx:id="characterImage" fitHeight="220" fitWidth="180" preserveRatio="true" />
+        <Label fx:id="resultLabel" text="Sẵn sàng!" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
     </VBox>
 
-    <HBox alignment="CENTER" spacing="15.0">
-        <children>
-            <Button mnemonicParsing="false" onAction="#onRoll1Click" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #4a90e2;" text="Quay x1" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="13.0" />
-                </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#onRoll10Click" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #6c5ce7;" text="Quay x10" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="13.0" />
-                </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#onResetClick" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #e74c3c;" text="Reset" textFill="WHITE" />
-        </children>
+    <HBox alignment="CENTER" spacing="10">
+        <Button onAction="#onRoll1Click" style="-fx-background-color: #3498db;" text="QUAY X1" textFill="WHITE" />
+        <Button onAction="#onRoll10Click" style="-fx-background-color: #9b59b6;" text="QUAY X10" textFill="WHITE" />
+        <Button onAction="#onResetClick" style="-fx-background-color: #e74c3c;" text="RESET" textFill="WHITE" />
     </HBox>
 
-    <Label text="Lịch sử quay:" textFill="#bbbbbb" />
-    <TextArea fx:id="historyArea" editable="false" prefHeight="200.0" prefWidth="400.0" style="-fx-control-inner-background: #1e1e1e; -fx-text-fill: #ffffff;" wrapText="true" />
+    <TextArea fx:id="historyArea" editable="false" prefHeight="150" style="-fx-control-inner-background: #000; -fx-text-fill: #0f0;" />
 </VBox>

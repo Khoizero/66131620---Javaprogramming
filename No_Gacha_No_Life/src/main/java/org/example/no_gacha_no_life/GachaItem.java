@@ -9,17 +9,12 @@ public class GachaItem {
         this.rarity = rarity;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getRarity() {
-        return rarity;
-    }
+    public String getName() { return name; }
+    public int getRarity() { return rarity; }
 
     @Override
     public String toString() {
-        String color = (rarity == 5) ? "VÀNG" : (rarity == 4 ? "TÍM" : "XANH");
-        return "[" + rarity + " SAO - " + color + "] " + name;
+        String stars = (rarity == 5) ? "⭐⭐⭐⭐⭐" : (rarity == 4 ? "⭐⭐⭐⭐" : "⭐⭐⭐");
+        return "[" + stars + "] " + name;
     }
 }
