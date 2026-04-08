@@ -101,7 +101,6 @@ public class Run {
             }
         }
 
-// --- CÂU 5.b: Xuất lại danh sách ---
         System.out.println("===Danh sach sau khi xu ly===");
         if (danhsach.isEmpty()) {
             System.out.println("---Danh sach trong---");
