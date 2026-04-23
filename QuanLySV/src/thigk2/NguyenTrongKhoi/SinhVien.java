@@ -48,4 +48,10 @@ public class SinhVien {
     public void setGioiTinh(boolean gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
+
+    @Override
+    public String toString() {
+        return "MSSV: " + mssv + " | Họ tên: " + hoTen +
+                " | Năm sinh: " + namSinh + " | Giới tính: " + (gioiTinh ? "Nam" : "Nữ");
+    }
 }
